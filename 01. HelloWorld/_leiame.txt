@@ -1,0 +1,18 @@
+** Configurando o ambiente do VS **
+Tools / Option / Text Editor / Javascript / Intelisense / References
+Em "Reference Group" altere para "Implicit Web"
+Mais informações: https://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k%28VS.ToolsOptionsPages.Text_Editor.JavaScript.Intellisense.References%29&rd=true
+
+
+1. Crie um projeto C# | Web | Empty Application
+2. Adicione os seguintes pacotes via nuget (id do pacotes):
+	- bootstrap
+	- AngularJS.Core
+3. Em Scripts, crie o arquivo _references.js.  Com o mesmo aberto, clique com o botão direito e clique na opção "Auto-sync javascript references"
+4. Crie uma página index.html
+5. Crie uma pasta app na solução
+6. Na pasta app crie o módulo  app.js declarando o mesmo
+7. No html da página, na tag html adicione a diretiva ng-app="nomeDoModulo"
+8. No <head> da página adicione o css do bootstrap e favicon.ico do Angular
+9. No body, no fim, adicione o script do Angular e do módulo criado
+10. No body, adicione uma expressão com a string Hello World!
