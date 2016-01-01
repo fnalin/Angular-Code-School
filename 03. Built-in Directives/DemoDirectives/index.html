@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" ng-app="productsApp">
+<head>
+    <title>Directives</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="products" ng-controller="productsController">
+        <div class="product" ng-repeat="product in products">
+            <div ng-hide="product.soldOut">
+                <h1>{{product.name}}</h1>
+                <h2>R$ {{product.price}}</h2>
+                <p>{{product.description}}</p>
+                <button ng-show="product.canPurchase" ng-click="AddToCart(product.name)">Add to Cart</button>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/productsController.js"></script>
+</body>
+</html>
