@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" ng-app="storeApp">
+<head>
+    <title>Controllers</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div ng-controller="storeController">
+        <h1>{{product.name}}</h1>
+        <h2>R$ {{product.price}}</h2>
+        <p>{{product.description}}</p>
+    </div>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/storeController.js"></script>
+</body>
+</html>
