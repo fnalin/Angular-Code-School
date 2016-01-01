@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+<head>
+    <title>Demo</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Demo</h1>
+    <div class="products" ng-controller="productscontroller">
+        <div ng-repeat="product in products | orderBy:'-valor'">
+            <h2>{{product.nome | uppercase}} - {{product.id}}</h2>
+            <strong>{{product.data | date:'dd/MM/yyyy @h:mma'}}</strong> <br />
+            <span>{{product.valor | currency}}</span>
+            <ul>
+                <li ng-repeat="tag in product.tags | limitTo:3"><a href="#" ng-click="AlertaTag(tag,product.nome)">{{tag}}</a></li>
+            </ul>
+            <hr />
+        </div>
+    </div>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/productscontroller.js"></script>
+</body>
+</html>
