@@ -76,12 +76,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\controllers\produtoscontroller.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\estilo.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\agasalho.jpg" />
+    <Content Include="images\bola_campo.jpg" />
+    <Content Include="images\camisa_feminina.jpg" />
+    <Content Include="images\camisa_passeio.jpg" />
+    <Content Include="images\mochila.jpg" />
     <Content Include="index.html" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

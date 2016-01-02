@@ -1,0 +1,21 @@
+﻿
+article.produtos>section{
+    min-height:500px;
+}
+
+article.produtos>section>header>h1{
+    font-size:16px;
+}
+
+article.produtos>section>header>h2{
+    font-size:14px;
+}
+
+div.image>img{
+    display: block;
+    margin: 0 auto;
+}
+
+ul.nav{
+    margin:25px 0;
+}

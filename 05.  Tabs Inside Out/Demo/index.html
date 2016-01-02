@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="demoApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +7,60 @@
     <title>Demo Tabs</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/estilo.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
+    <div class="container" ng-controller="produtosController">
         <h1>Lista de Produtos</h1>
-        <section>
+        <article class="row produtos">
+            <section class="col-lg-4" ng-repeat="produto in produtos | orderBy:'valor'">
+                <header class="clearfix">
+                    <h1 class="pull-left">{{produto.nome}}</h1>
+                    <h2 class="pull-right">{{produto.valor | currency}}</h2>
+                </header>
+                <div>
+                    <div class="image">
+                        <img width='120' ng-src="{{ produto.imagem }}" />
+                    </div>
+                    <ul class="nav nav-pills">
+                        <li ng-class="{active:produto.isSelected(1)}">
+                            <a ng-click="produto.selectTab(1)">Descrição</a>
+                        </li>
+                        <li ng-class="{active:produto.isSelected(2)}">
+                            <a ng-click="produto.selectTab(2)">Especificações</a>
 
-        </section>
+                        </li>
+                        <li ng-class="{active:produto.isSelected(3)}">
+                            <a ng-click="produto.selectTab(3)">Avaliações</a>
+                            
+                        </li>
+                    </ul>
+                    <div class="panel" ng-show="produto.isSelected(1)">
+                        <p>{{produto.descricao | lowercase}}</p>
+                    </div>
+
+                    <div class="panel" ng-show="produto.isSelected(2)">
+                        <ul>
+                            <li ng-repeat="especificacao in produto.especificacoes">{{especificacao}}</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel" ng-show="produto.isSelected(3)">
+                        <dl class="dl-horizontal" ng-repeat="avaliacao in produto.avaliacoes">
+                            <dt>{{avaliacao.nome}}</dt>
+                            <dd>{{avaliacao.texto}}</dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </section>
+        </article>
     </div>
 
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/produtoscontroller.js"></script>
 </body>
 </html>
